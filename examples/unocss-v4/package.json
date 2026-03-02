@@ -9,14 +9,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "catalog:"
+    "vue": "catalog:example"
   },
   "devDependencies": {
-    "@types/node": "catalog:",
-    "@vitejs/plugin-vue": "catalog:",
-    "@vue/tsconfig": "catalog:",
-    "typescript": "catalog:",
-    "vite": "catalog:",
-    "vue-tsc": "catalog:"
+    "@types/node": "catalog:example",
+    "@vitejs/plugin-vue": "catalog:example",
+    "@vue/tsconfig": "catalog:example",
+    "typescript": "catalog:example",
+    "vite": "catalog:example",
+    "vue-tsc": "catalog:example"
   }
 }

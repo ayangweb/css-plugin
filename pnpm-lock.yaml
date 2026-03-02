@@ -6,31 +6,13 @@ settings:
 
 catalogs:
   default:
-    '@types/node':
-      specifier: ^24.10.1
-      version: 24.11.0
-    '@vitejs/plugin-vue':
-      specifier: ^6.0.2
-      version: 6.0.4
-    '@vue/tsconfig':
-      specifier: ^0.8.1
-      version: 0.8.1
     antdv-next:
       specifier: ^1.1.0
       version: 1.1.0
-    typescript:
-      specifier: ~5.9.3
-      version: 5.9.3
-    vite:
-      specifier: ^8.0.0-beta.13
-      version: 8.0.0-beta.16
-    vue:
-      specifier: ^3.5.25
-      version: 3.5.29
-    vue-tsc:
-      specifier: ^3.1.5
-      version: 3.2.5
   dev:
+    '@vue/tsconfig':
+      specifier: ^0.8.1
+      version: 0.8.1
     bumpp:
       specifier: ^10.3.2
       version: 10.4.0
@@ -43,13 +25,35 @@ catalogs:
     unocss:
       specifier: ^66.5.10
       version: 66.6.0
+  example:
+    '@types/node':
+      specifier: ^24.10.1
+      version: 24.11.0
+    '@vitejs/plugin-vue':
+      specifier: ^6.0.2
+      version: 6.0.4
+    '@vue/tsconfig':
+      specifier: ^0.8.1
+      version: 0.8.1
+    typescript:
+      specifier: ~5.9.3
+      version: 5.9.3
+    vite:
+      specifier: ^8.0.0-beta.13
+      version: 8.0.0-beta.16
+    vue:
+      specifier: ^3.5.25
+      version: 3.5.29
+    vue-tsc:
+      specifier: ^3.1.5
+      version: 3.2.5
 
 importers:
 
   .:
     devDependencies:
       '@vue/tsconfig':
-        specifier: 'catalog:'
+        specifier: catalog:dev
         version: 0.8.1(typescript@5.9.3)(vue@3.5.29(typescript@5.9.3))
       antdv-next:
         specifier: 'catalog:'
@@ -61,107 +65,107 @@ importers:
         specifier: catalog:dev
         version: 0.20.1(typescript@5.9.3)(vue-tsc@3.2.5(typescript@5.9.3))
       typescript:
-        specifier: 'catalog:'
+        specifier: catalog:example
         version: 5.9.3
 
   examples/tailwind-v3:
     dependencies:
       vue:
-        specifier: 'catalog:'
+        specifier: catalog:example
         version: 3.5.29(typescript@5.9.3)
     devDependencies:
       '@types/node':
-        specifier: 'catalog:'
+        specifier: catalog:example
         version: 24.11.0
       '@vitejs/plugin-vue':
-        specifier: 'catalog:'
+        specifier: catalog:example
         version: 6.0.4(vite@8.0.0-beta.16(@types/node@24.11.0)(esbuild@0.27.2)(jiti@2.6.1)(yaml@2.8.2))(vue@3.5.29(typescript@5.9.3))
       '@vue/tsconfig':
-        specifier: 'catalog:'
+        specifier: catalog:example
         version: 0.8.1(typescript@5.9.3)(vue@3.5.29(typescript@5.9.3))
       typescript:
-        specifier: 'catalog:'
+        specifier: catalog:example
         version: 5.9.3
       vite:
-        specifier: 'catalog:'
+        specifier: catalog:example
         version: 8.0.0-beta.16(@types/node@24.11.0)(esbuild@0.27.2)(jiti@2.6.1)(yaml@2.8.2)
       vue-tsc:
-        specifier: 'catalog:'
+        specifier: catalog:example
         version: 3.2.5(typescript@5.9.3)
 
   examples/tailwind-v4:
     dependencies:
       vue:
-        specifier: 'catalog:'
+        specifier: catalog:example
         version: 3.5.29(typescript@5.9.3)
     devDependencies:
       '@types/node':
-        specifier: 'catalog:'
+        specifier: catalog:example
         version: 24.11.0
       '@vitejs/plugin-vue':
-        specifier: 'catalog:'
+        specifier: catalog:example
         version: 6.0.4(vite@8.0.0-beta.16(@types/node@24.11.0)(esbuild@0.27.2)(jiti@2.6.1)(yaml@2.8.2))(vue@3.5.29(typescript@5.9.3))
       '@vue/tsconfig':
-        specifier: 'catalog:'
+        specifier: catalog:example
         version: 0.8.1(typescript@5.9.3)(vue@3.5.29(typescript@5.9.3))
       typescript:
-        specifier: 'catalog:'
+        specifier: catalog:example
         version: 5.9.3
       vite:
-        specifier: 'catalog:'
+        specifier: catalog:example
         version: 8.0.0-beta.16(@types/node@24.11.0)(esbuild@0.27.2)(jiti@2.6.1)(yaml@2.8.2)
       vue-tsc:
-        specifier: 'catalog:'
+        specifier: catalog:example
         version: 3.2.5(typescript@5.9.3)
 
   examples/unocss-v3:
     dependencies:
       vue:
-        specifier: 'catalog:'
+        specifier: catalog:example
         version: 3.5.29(typescript@5.9.3)
     devDependencies:
       '@types/node':
-        specifier: 'catalog:'
+        specifier: catalog:example
         version: 24.11.0
       '@vitejs/plugin-vue':
-        specifier: 'catalog:'
+        specifier: catalog:example
         version: 6.0.4(vite@8.0.0-beta.16(@types/node@24.11.0)(esbuild@0.27.2)(jiti@2.6.1)(yaml@2.8.2))(vue@3.5.29(typescript@5.9.3))
       '@vue/tsconfig':
-        specifier: 'catalog:'
+        specifier: catalog:example
         version: 0.8.1(typescript@5.9.3)(vue@3.5.29(typescript@5.9.3))
       typescript:
-        specifier: 'catalog:'
+        specifier: catalog:example
         version: 5.9.3
       vite:
-        specifier: 'catalog:'
+        specifier: catalog:example
         version: 8.0.0-beta.16(@types/node@24.11.0)(esbuild@0.27.2)(jiti@2.6.1)(yaml@2.8.2)
       vue-tsc:
-        specifier: 'catalog:'
+        specifier: catalog:example
         version: 3.2.5(typescript@5.9.3)
 
   examples/unocss-v4:
     dependencies:
       vue:
-        specifier: 'catalog:'
+        specifier: catalog:example
         version: 3.5.29(typescript@5.9.3)
     devDependencies:
       '@types/node':
-        specifier: 'catalog:'
+        specifier: catalog:example
         version: 24.11.0
       '@vitejs/plugin-vue':
-        specifier: 'catalog:'
+        specifier: catalog:example
         version: 6.0.4(vite@8.0.0-beta.16(@types/node@24.11.0)(esbuild@0.27.2)(jiti@2.6.1)(yaml@2.8.2))(vue@3.5.29(typescript@5.9.3))
       '@vue/tsconfig':
-        specifier: 'catalog:'
+        specifier: catalog:example
         version: 0.8.1(typescript@5.9.3)(vue@3.5.29(typescript@5.9.3))
       typescript:
-        specifier: 'catalog:'
+        specifier: catalog:example
         version: 5.9.3
       vite:
-        specifier: 'catalog:'
+        specifier: catalog:example
         version: 8.0.0-beta.16(@types/node@24.11.0)(esbuild@0.27.2)(jiti@2.6.1)(yaml@2.8.2)
       vue-tsc:
-        specifier: 'catalog:'
+        specifier: catalog:example
         version: 3.2.5(typescript@5.9.3)
 
   packages/tailwind:
