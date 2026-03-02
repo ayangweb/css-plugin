@@ -71,13 +71,15 @@ export function buildColorsTheme(antPrefix: string, builtPalettes: Record<string
  */
 export function buildSpacingTheme(antPrefix: string) {
   return {
-    xxs: `var(--${antPrefix}-padding-xxs)`,
-    xs: `var(--${antPrefix}-padding-xs)`,
-    sm: `var(--${antPrefix}-padding-sm)`,
-    DEFAULT: `var(--${antPrefix}-padding)`,
-    md: `var(--${antPrefix}-padding-md)`,
-    lg: `var(--${antPrefix}-padding-lg)`,
-    xl: `var(--${antPrefix}-padding-xl)`,
+    xxs: `var(--${antPrefix}-padding-xxs)`, // 4px
+    xs: `var(--${antPrefix}-padding-xs)`, // 8px
+    sm: `var(--${antPrefix}-padding-sm)`, // 12px
+    // DEFAULT: `var(--${antPrefix}-padding)`, // 16px - 移除以避免生成 p-DEFAULT / m-DEFAULT 等无用工具类
+    md: `var(--${antPrefix}-padding-md)`, // 20px
+    lg: `var(--${antPrefix}-padding-lg)`, // 24px
+    xl: `var(--${antPrefix}-padding-xl)`, // 32px
+    xxl: `var(--${antPrefix}-padding-xxl)`, // 48px
+    xxxl: `var(--${antPrefix}-padding-xxxl)`, // 64px
   }
 }
 

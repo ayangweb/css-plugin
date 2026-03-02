@@ -4,7 +4,7 @@ import { App } from "antdv-next"
 
 <template>
   <App>
-   <span class="a-px-md a-mx-md mx-lg mx-"> ss</span>
+    <span class=""></span>
   </App>
 </template>
 

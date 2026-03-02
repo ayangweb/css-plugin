@@ -88,6 +88,8 @@ export function buildSpacingTheme(antPrefix: string) {
     md: `var(--${antPrefix}-padding-md)`, // 20px
     lg: `var(--${antPrefix}-padding-lg)`, // 24px
     xl: `var(--${antPrefix}-padding-xl)`, // 32px
+    xxl: `var(--${antPrefix}-padding-xxl)`, // 48px
+    xxxl: `var(--${antPrefix}-padding-xxxl)`, // 64px
   }
 }
 

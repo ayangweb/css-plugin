@@ -2,6 +2,8 @@
  * 自动补全模板生成函数
  */
 
+import { colorNames } from './types'
+
 export interface AutocompleteOptions {
   prefix: string
   themeKeys: {
@@ -11,85 +13,105 @@ export interface AutocompleteOptions {
   }
 }
 
+// 调色板颜色键：blue|blue-1|...|blue-10|purple|...
+function buildColorPaletteEnum() {
+  const keys: string[] = []
+  for (const name of colorNames) {
+    keys.push(name)
+    for (let i = 1; i <= 10; i++) keys.push(`${name}-${i}`)
+  }
+  return keys.join('|')
+}
+
+// 固定的 AntD 主题枚举值（避免污染 $spacing/$colors 等全局 token）
+const SPACING_ENUM = '(xxs|xs|sm|md|lg|xl|xxl|xxxl)'
+const SEMANTIC_COLORS = 'primary|primary-hover|primary-active|primary-bg|primary-bg-hover|success|success-bg|success-border|success-hover|warning|warning-bg|warning-border|warning-hover|error|error-bg|error-border|error-hover|info|info-bg|info-border|link|link-hover|link-active|text|text-secondary|text-tertiary|text-quat|text-quaternary|white|base|container|layout|elevated|mask|main|sec|quat|split|border|border-sec'
+const COLOR_ENUM = `(${buildColorPaletteEnum()}|${SEMANTIC_COLORS})`
+const RADIUS_ENUM = '(xs|sm|lg)'
+const FONT_ENUM = '(sm|lg|xl|h1|h2|h3)'
+const TEXT_ENUM = '(sm|lg|xl|h1|h2|h3)'
+const SHADOW_ENUM = '(sec|secondary|ter|tertiary|card|arrow|drawer-r|drawer-l|drawer-u|drawer-d|drawer-right|drawer-left|drawer-up|drawer-down)'
+
 /**
  * 为指定前缀创建模板数组
  */
 function createTemplatesForPrefix(prefix: string, themeKeys: AutocompleteOptions['themeKeys']) {
   const p = prefix ? `${prefix}-` : ''
-  
+  const textEnum = themeKeys.text === 'text' ? TEXT_ENUM : FONT_ENUM
+
   return [
     // 颜色类
-    `${p}color-$colors`,
-    `${p}c-$colors`,
-    `${p}bg-$colors`,
+    `${p}color-${COLOR_ENUM}`,
+    `${p}c-${COLOR_ENUM}`,
+    `${p}bg-${COLOR_ENUM}`,
 
     // Border 边框色
     `${p}border`,
     `${p}b`,
-    `${p}border-$colors`,
-    `${p}b-$colors`,
+    `${p}border-${COLOR_ENUM}`,
+    `${p}b-${COLOR_ENUM}`,
     // Border 方向性
-    `${p}border-t-$colors`,
-    `${p}bt-$colors`,
-    `${p}border-r-$colors`,
-    `${p}br-$colors`,
-    `${p}border-b-$colors`,
-    `${p}bb-$colors`,
-    `${p}border-l-$colors`,
-    `${p}bl-$colors`,
-    `${p}border-x-$colors`,
-    `${p}bx-$colors`,
-    `${p}border-y-$colors`,
-    `${p}by-$colors`,
+    `${p}border-t-${COLOR_ENUM}`,
+    `${p}bt-${COLOR_ENUM}`,
+    `${p}border-r-${COLOR_ENUM}`,
+    `${p}br-${COLOR_ENUM}`,
+    `${p}border-b-${COLOR_ENUM}`,
+    `${p}bb-${COLOR_ENUM}`,
+    `${p}border-l-${COLOR_ENUM}`,
+    `${p}bl-${COLOR_ENUM}`,
+    `${p}border-x-${COLOR_ENUM}`,
+    `${p}bx-${COLOR_ENUM}`,
+    `${p}border-y-${COLOR_ENUM}`,
+    `${p}by-${COLOR_ENUM}`,
 
     // Margin 类
-    `${p}m-$spacing`,
-    `${p}mt-$spacing`,
-    `${p}mb-$spacing`,
-    `${p}ml-$spacing`,
-    `${p}mr-$spacing`,
-    `${p}mx-$spacing`,
-    `${p}my-$spacing`,
+    `${p}m-${SPACING_ENUM}`,
+    `${p}mt-${SPACING_ENUM}`,
+    `${p}mb-${SPACING_ENUM}`,
+    `${p}ml-${SPACING_ENUM}`,
+    `${p}mr-${SPACING_ENUM}`,
+    `${p}mx-${SPACING_ENUM}`,
+    `${p}my-${SPACING_ENUM}`,
 
     // Padding 类
-    `${p}p-$spacing`,
-    `${p}pt-$spacing`,
-    `${p}pb-$spacing`,
-    `${p}pl-$spacing`,
-    `${p}pr-$spacing`,
-    `${p}px-$spacing`,
-    `${p}py-$spacing`,
+    `${p}p-${SPACING_ENUM}`,
+    `${p}pt-${SPACING_ENUM}`,
+    `${p}pb-${SPACING_ENUM}`,
+    `${p}pl-${SPACING_ENUM}`,
+    `${p}pr-${SPACING_ENUM}`,
+    `${p}px-${SPACING_ENUM}`,
+    `${p}py-${SPACING_ENUM}`,
 
-    // 字体 (使用对应的主题键)
-    `${p}text-$${themeKeys.text}`,
+    // 字体
+    `${p}text-${textEnum}`,
 
-    // Rounded 圆角 (使用对应的主题键)
+    // Rounded 圆角
     `${p}rounded`,
     `${p}rd`,
-    `${p}rounded-$${themeKeys.rounded}`,
-    `${p}rd-$${themeKeys.rounded}`,
+    `${p}rounded-${RADIUS_ENUM}`,
+    `${p}rd-${RADIUS_ENUM}`,
     // 角落圆角
     `${p}rounded-tl`,
-    `${p}rounded-tl-$${themeKeys.rounded}`,
+    `${p}rounded-tl-${RADIUS_ENUM}`,
     `${p}rounded-tr`,
-    `${p}rounded-tr-$${themeKeys.rounded}`,
+    `${p}rounded-tr-${RADIUS_ENUM}`,
     `${p}rounded-bl`,
-    `${p}rounded-bl-$${themeKeys.rounded}`,
+    `${p}rounded-bl-${RADIUS_ENUM}`,
     `${p}rounded-br`,
-    `${p}rounded-br-$${themeKeys.rounded}`,
+    `${p}rounded-br-${RADIUS_ENUM}`,
     // 边侧圆角
     `${p}rounded-t`,
-    `${p}rounded-t-$${themeKeys.rounded}`,
+    `${p}rounded-t-${RADIUS_ENUM}`,
     `${p}rounded-r`,
-    `${p}rounded-r-$${themeKeys.rounded}`,
+    `${p}rounded-r-${RADIUS_ENUM}`,
     `${p}rounded-b`,
-    `${p}rounded-b-$${themeKeys.rounded}`,
+    `${p}rounded-b-${RADIUS_ENUM}`,
     `${p}rounded-l`,
-    `${p}rounded-l-$${themeKeys.rounded}`,
+    `${p}rounded-l-${RADIUS_ENUM}`,
 
-    // Shadow 阴影 (使用对应的主题键)
+    // Shadow 阴影
     `${p}shadow`,
-    `${p}shadow-$${themeKeys.shadow}`,
+    `${p}shadow-${SHADOW_ENUM}`,
   ]
 }
 
