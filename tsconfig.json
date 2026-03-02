@@ -1,5 +1,13 @@
 {
-  "references": [
-    { "path": "./tsconfig.base.json" }
-  ]
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "compilerOptions": {
+    "composite": true,
+    /* Linting */
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": true,
+    "noUncheckedSideEffectImports": true
+  }
 }

@@ -9,5 +9,11 @@ export default defineConfig({
   external: [
     'unocss',
   ],
+  outExtensions(){
+    return {
+      'js':".js",
+      "dts":".d.ts"
+    }
+  },
   skipNodeModulesBundle: true,
 })

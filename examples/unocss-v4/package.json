@@ -16,7 +16,9 @@
     "@vitejs/plugin-vue": "catalog:example",
     "@vue/tsconfig": "catalog:example",
     "typescript": "catalog:example",
+    "unocss": "catalog:dev",
     "vite": "catalog:example",
-    "vue-tsc": "catalog:example"
+    "vue-tsc": "catalog:example",
+    "@antdv-next/unocss": "workspace:*"
   }
 }

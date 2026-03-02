@@ -11,5 +11,11 @@ export default defineConfig({
     'tailwindcss',
     'tailwindcss/plugin',
   ],
+  outExtensions(){
+    return {
+      'js':".js",
+      "dts":".d.ts"
+    }
+  },
   skipNodeModulesBundle: true,
 })
