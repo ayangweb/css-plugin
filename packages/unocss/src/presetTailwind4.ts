@@ -40,14 +40,22 @@ export const presetAntdTailwind4 = definePreset((options?: AntdPresetTailwind4Op
       defaults: {},
     },
 
-    // 自定义规则
+    // 自定义规则 - 同时支持带前缀和不带前缀的写法
     rules: ([
+      // 带前缀的规则 (如 a-mx-lg)
       ...createColorRules(prefix),
       ...createBorderRules(prefix),
       ...createSpacingRules(prefix),
       ...createTextRules(prefix, 'text'),
       ...createRoundedRules(prefix, 'radius'),
       ...createShadowRules(prefix, 'shadow'),
+      // 不带前缀的规则 (如 mx-lg)
+      ...createColorRules(''),
+      ...createBorderRules(''),
+      ...createSpacingRules(''),
+      ...createTextRules('', 'text'),
+      ...createRoundedRules('', 'radius'),
+      ...createShadowRules('', 'shadow'),
     ] as any),
     autocomplete: {
       templates: createAutocompleteTemplates({

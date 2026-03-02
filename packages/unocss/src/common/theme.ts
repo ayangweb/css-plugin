@@ -84,7 +84,7 @@ export function buildSpacingTheme(antPrefix: string) {
     xxs: `var(--${antPrefix}-padding-xxs)`, // 4px (AntD通常padding/margin共用一套大小阶梯)
     xs: `var(--${antPrefix}-padding-xs)`, // 8px
     sm: `var(--${antPrefix}-padding-sm)`, // 12px
-    DEFAULT: `var(--${antPrefix}-padding)`, // 16px
+    // DEFAULT: `var(--${antPrefix}-padding)`, // 16px - 移除以避免在自动完成中显示 mx-DEFAULT 等
     md: `var(--${antPrefix}-padding-md)`, // 20px
     lg: `var(--${antPrefix}-padding-lg)`, // 24px
     xl: `var(--${antPrefix}-padding-xl)`, // 32px

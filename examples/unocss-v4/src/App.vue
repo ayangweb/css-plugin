@@ -1,9 +1,10 @@
 <script setup lang="ts">
+import { App } from "antdv-next"
 </script>
 
 <template>
-  <div>
-   <span class="px-md mx-md"> ss</span>
-  </div>
+  <App>
+   <span class="a-px-md a-mx-md mx-lg mx-"> ss</span>
+  </App>
 </template>
 

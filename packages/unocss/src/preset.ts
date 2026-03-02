@@ -38,14 +38,22 @@ export const presetAntd = definePreset((options?: AntdPresetOptions): Preset => 
       boxShadow: buildShadowTheme(antPrefix),
     },
 
-    // 自定义规则
+    // 自定义规则 - 同时支持带前缀和不带前缀的写法
     rules: ([
+      // 带前缀的规则 (如 a-mx-lg)
       ...createColorRules(prefix),
       ...createBorderRules(prefix),
       ...createSpacingRules(prefix),
       ...createTextRules(prefix, 'fontSize'),
       ...createRoundedRules(prefix, 'borderRadius'),
       ...createShadowRules(prefix, 'boxShadow'),
+      // 不带前缀的规则 (如 mx-lg)
+      ...createColorRules(''),
+      ...createBorderRules(''),
+      ...createSpacingRules(''),
+      ...createTextRules('', 'fontSize'),
+      ...createRoundedRules('', 'borderRadius'),
+      ...createShadowRules('', 'boxShadow'),
     ] as any),
     autocomplete: {
       templates: createAutocompleteTemplates({

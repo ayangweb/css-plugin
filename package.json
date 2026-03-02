@@ -13,6 +13,7 @@
     "antdv-next": "catalog:",
     "bumpp": "catalog:dev",
     "tsdown": "catalog:dev",
-    "typescript": "catalog:example"
+    "typescript": "catalog:example",
+    "vitest": "^4.0.18"
   }
 }

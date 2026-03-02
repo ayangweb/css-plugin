@@ -8,4 +8,7 @@ export default defineConfig({
     unocss(),
     vue()
   ],
+  server:{
+    port:5555
+  }
 })
