@@ -203,7 +203,6 @@
   --color-quat: var(--ant-color-text-quaternary);
 
   /* Background Colors */
-  --color-white: var(--ant-color-white);
   --color-base: var(--ant-color-bg-base);
   --color-container: var(--ant-color-bg-container);
   --color-layout: var(--ant-color-bg-layout);
