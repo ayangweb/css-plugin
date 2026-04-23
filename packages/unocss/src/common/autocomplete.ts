@@ -26,7 +26,7 @@ function buildColorPaletteEnum() {
 
 // 固定的 AntD 主题枚举值（避免污染 $spacing/$colors 等全局 token）
 const SPACING_ENUM = '(xxs|xs|sm|md|lg|xl|xxl|xxxl)'
-const SEMANTIC_COLORS = 'primary|primary-hover|primary-active|primary-bg|primary-bg-hover|success|success-bg|success-border|success-hover|warning|warning-bg|warning-border|warning-hover|error|error-bg|error-border|error-hover|info|info-bg|info-border|link|link-hover|link-active|text|text-secondary|text-tertiary|text-quat|text-quaternary|white|base|container|layout|elevated|mask|main|sec|quat|split|border|border-sec'
+const SEMANTIC_COLORS = 'primary|primary-hover|primary-active|primary-bg|primary-bg-hover|success|success-bg|success-border|success-hover|warning|warning-bg|warning-border|warning-hover|error|error-bg|error-border|error-hover|info|info-bg|info-border|link|link-hover|link-active|text|text-secondary|text-tertiary|text-quat|text-quaternary|fill|fill-secondary|fill-tertiary|fill-quaternary|white|base|container|layout|elevated|mask|main|sec|quat|split|border|border-sec'
 const COLOR_ENUM = `(${buildColorPaletteEnum()}|${SEMANTIC_COLORS})`
 const RADIUS_ENUM = '(xs|sm|lg)'
 const FONT_ENUM = '(sm|lg|xl|h1|h2|h3)'

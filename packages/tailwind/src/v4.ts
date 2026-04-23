@@ -131,6 +131,10 @@ export function generateThemeCSS(options: AntdPluginOptions = {}): string {
   lines.push(`  --color-main: var(--${antPrefix}-color-text);`)
   lines.push(`  --color-sec: var(--${antPrefix}-color-text-secondary);`)
   lines.push(`  --color-quat: var(--${antPrefix}-color-text-quaternary);`)
+  lines.push(`  --color-fill: var(--${antPrefix}-color-fill);`)
+  lines.push(`  --color-fill-secondary: var(--${antPrefix}-color-fill-secondary);`)
+  lines.push(`  --color-fill-tertiary: var(--${antPrefix}-color-fill-tertiary);`)
+  lines.push(`  --color-fill-quaternary: var(--${antPrefix}-color-fill-quaternary);`)
 
   lines.push('')
   lines.push('  /* Background Colors */')

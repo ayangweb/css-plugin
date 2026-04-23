@@ -62,6 +62,12 @@ export function buildColorsTheme(antPrefix: string, builtPalettes: Record<string
     'text-quat': `var(--${antPrefix}-color-text-quaternary)`,
     'text-quaternary': `var(--${antPrefix}-color-text-quaternary)`,
 
+    // 填充色
+    'fill': `var(--${antPrefix}-color-fill)`,
+    'fill-secondary': `var(--${antPrefix}-color-fill-secondary)`,
+    'fill-tertiary': `var(--${antPrefix}-color-fill-tertiary)`,
+    'fill-quaternary': `var(--${antPrefix}-color-fill-quaternary)`,
+
     // 背景 (Background)
     'base': `var(--${antPrefix}-color-bg-base)`,
     'container': `var(--${antPrefix}-color-bg-container)`, // 常用：白色卡片背景
