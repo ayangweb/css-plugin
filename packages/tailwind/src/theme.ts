@@ -49,7 +49,6 @@ export function buildColorsTheme(antPrefix: string, builtPalettes: Record<string
     'text-quaternary': `var(--${antPrefix}-color-text-quaternary)`,
 
     // 中性色
-    'white': `var(--${antPrefix}-color-white)`,
     'base': `var(--${antPrefix}-color-bg-base)`,
     'container': `var(--${antPrefix}-color-bg-container)`,
     'layout': `var(--${antPrefix}-color-bg-layout)`,

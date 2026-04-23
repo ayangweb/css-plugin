@@ -134,7 +134,6 @@ export function generateThemeCSS(options: AntdPluginOptions = {}): string {
 
   lines.push('')
   lines.push('  /* Background Colors */')
-  lines.push(`  --color-white: var(--${antPrefix}-color-white);`)
   lines.push(`  --color-base: var(--${antPrefix}-color-bg-base);`)
   lines.push(`  --color-container: var(--${antPrefix}-color-bg-container);`)
   lines.push(`  --color-layout: var(--${antPrefix}-color-bg-layout);`)

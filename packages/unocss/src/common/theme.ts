@@ -62,9 +62,6 @@ export function buildColorsTheme(antPrefix: string, builtPalettes: Record<string
     'text-quat': `var(--${antPrefix}-color-text-quaternary)`,
     'text-quaternary': `var(--${antPrefix}-color-text-quaternary)`,
 
-    // 4. 中性色 (背景与文字 - 保持之前简化后的 Key)
-    'white': `var(--${antPrefix}-color-white)`,
-
     // 背景 (Background)
     'base': `var(--${antPrefix}-color-bg-base)`,
     'container': `var(--${antPrefix}-color-bg-container)`, // 常用：白色卡片背景
