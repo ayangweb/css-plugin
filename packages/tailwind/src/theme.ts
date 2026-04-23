@@ -48,6 +48,12 @@ export function buildColorsTheme(antPrefix: string, builtPalettes: Record<string
     'text-quat': `var(--${antPrefix}-color-text-quaternary)`,
     'text-quaternary': `var(--${antPrefix}-color-text-quaternary)`,
 
+    // 填充色
+    'fill': `var(--${antPrefix}-color-fill)`,
+    'fill-secondary': `var(--${antPrefix}-color-fill-secondary)`,
+    'fill-tertiary': `var(--${antPrefix}-color-fill-tertiary)`,
+    'fill-quaternary': `var(--${antPrefix}-color-fill-quaternary)`,
+
     // 中性色
     'base': `var(--${antPrefix}-color-bg-base)`,
     'container': `var(--${antPrefix}-color-bg-container)`,
