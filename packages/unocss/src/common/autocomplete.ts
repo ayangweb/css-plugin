@@ -47,8 +47,6 @@ function createTemplatesForPrefix(prefix: string, themeKeys: AutocompleteOptions
     `${p}bg-${COLOR_ENUM}`,
 
     // Border 边框色
-    `${p}border`,
-    `${p}b`,
     `${p}border-${COLOR_ENUM}`,
     `${p}b-${COLOR_ENUM}`,
     // Border 方向性

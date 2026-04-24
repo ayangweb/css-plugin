@@ -39,12 +39,6 @@ export function createBorderRules(prefix: string, themeTokenPrefix?: string) {
   const p = prefix ? `${prefix}-` : ''
   
   return [
-    // ${prefix}-border 或 ${prefix}-b -> border-color: var(--${antPrefix}-color-border) (DEFAULT)
-    [new RegExp(`^${p}(?:border|b)$`), (_: any, { theme }: any) => {
-      const color = (theme.colors as any)?.[resolveThemeTokenKey('border', themeTokenPrefix)]
-      if (color)
-        return { 'border-color': color }
-    }],
     // ${prefix}-border-primary 或 ${prefix}-b-primary -> border-color: ...
     [new RegExp(`^${p}(?:border|b)-(.+)$`), ([_, c]: [any, any], { theme }: any) => {
       const color = (theme.colors as any)?.[resolveThemeTokenKey(c!, themeTokenPrefix)]
